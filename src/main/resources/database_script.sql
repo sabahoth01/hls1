@@ -29,6 +29,7 @@ CREATE TABLE users (
                       username VARCHAR(100),
                       usersurname VARCHAR(100),
                       email VARCHAR(50),
+                      phone VARCHAR(15),
                       password VARCHAR(100)
 );
 
@@ -86,8 +87,8 @@ CREATE TABLE player_team (
 );
 
 -- Create the many-to-many relationship table between "player" and "role"
-CREATE TABLE player_role (
-                             player_id INTEGER REFERENCES player(player_id) ON DELETE CASCADE,
+CREATE TABLE user_role (
+                             user_id INTEGER REFERENCES player(user_id) ON DELETE CASCADE,
                              role_id INTEGER REFERENCES role(role_id) ON DELETE CASCADE,
-                             PRIMARY KEY (player_id, role_id)
+                             PRIMARY KEY (user_id, role_id)
 );
