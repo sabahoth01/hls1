@@ -1,12 +1,10 @@
 package ru.itmo.hls1.model.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import ru.booking.playground.constant.LocationList;
-import ru.booking.playground.constant.PlaygroundName;
-
 import java.util.Collection;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name=playground)
 public class Playground {
@@ -14,21 +12,20 @@ public class Playground {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "playground_id", unique = true, nullable = false)
-    private Long playground_id;
+    private Integer playground_id;
 
-    @Enumerated(EnumType.STRING)
     @Column(name = "playground_name", nullable = false)
-    private PlaygroundName playgroundName;
+    private String playgroundName;
 
-    @Enumerated(EnumType.STRING)
     @Column(name = "location", nullable = false)
-    private LocationList locationList;
+    private String locationList;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "playgrounds", orphanRemoval = true, fetch = FetchType.LAZY)
+
+    @OneToMany(mappedBy = "playgrounds", cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
+    @JoinColumn(name = "sport_id", referencedColumnName = "sport_id")
     private Collection<Sport> sports;
 
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true,fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "playgrounds", cascade = CascadeType.ALL, orphanRemoval = true,fetch = FetchType.LAZY)
     private PlaygroundAvailability playgroundAvailability;
 
 }

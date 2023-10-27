@@ -2,9 +2,10 @@ package ru.itmo.hls1.model.entity;
 
 
 import jakarta.persistence.*;
-
+import lombok.Data;
 import java.time.LocalDateTime;
 
+@Data
 @Entity
 @Table(name=booking)
 public class Booking {
@@ -26,7 +27,7 @@ public class Booking {
 
 
     @OneToOne(mappedBy = "booking", orphanRemoval = true)
-    @JoinColumn(name = "playground_id", referencedColumnName = "playground_id")
+    @JoinColumn(name = "playgroundAvailability_id", referencedColumnName = "playgroundAvailability_id")
     private PlaygroundAvailability playgroundAvailability;
 
 }

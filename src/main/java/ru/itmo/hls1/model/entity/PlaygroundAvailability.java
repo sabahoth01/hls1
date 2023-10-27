@@ -1,9 +1,11 @@
 package ru.itmo.hls1.model.entity;
 
 import jakarta.persistence.*;
-
 import java.time.LocalDateTime;
+import lombok.Data;
 
+
+@Data
 @Entity
 @Table(name = playgroundAvailability)
 public class PlaygroundAvailability {

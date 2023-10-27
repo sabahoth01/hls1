@@ -4,8 +4,8 @@ package ru.itmo.hls1.security;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
-import ru.booking.playground.model.entity.User;
-import ru.booking.playground.repository.UserRepository;
+import ru.itmo.hls1.model.entity.User;
+import ru.itmo.hls1.repository.UserRepository;
 
 @Service
 public class LoggedInUser {
