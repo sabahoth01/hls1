@@ -1,11 +1,15 @@
 package ru.itmo.hls1.model.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+@EqualsAndHashCode(callSuper = true)
+@Data
+@AllArgsConstructor
+@Builder
 public record UserDto(
-    Long user_id,
-    String first_name,
-    String last_name,
-    String username,
-    String email,
-    String gender,
-    Integer phone){
+    Integer user_id,
+    String username){
 }

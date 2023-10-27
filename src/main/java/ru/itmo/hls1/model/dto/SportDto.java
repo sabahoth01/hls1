@@ -1,8 +1,10 @@
 package ru.itmo.hls1.model.dto;
-import ru.booking.playground.constant.SportType;
+import lombok.Data;
+import ru.itmo.hls1.constant.SportType;
 
+
+@Data
 public record SportDto(
-        Long sport_id,
-        SportType sport_type,
-        PlaygroundDto playground
+        Integer sport_id,
+        SportType sport_type
 ) {}
