@@ -140,30 +140,35 @@ INSERT INTO sport (sport_name) VALUES
                                    ('Soccer');
 
 -- Insert statements for the "playground" table
-INSERT INTO playground (playground_name, sport_id, location) VALUES
-                                                                 ('Playground 1', 1, 'Location 1'),
-                                                                 ('Playground 2', 2, 'Location 2'),
-                                                                 ('Playground 3', 3, 'Location 3'),
-                                                                 ('Playground 4', 4, 'Location 4'),
-                                                                 ('Playground 5', 5, 'Location 5'),
-                                                                 ('Playground 6', 1, 'Location 6'),
-                                                                 ('Playground 7', 2, 'Location 7'),
-                                                                 ('Playground 8', 3, 'Location 8'),
-                                                                 ('Playground 9', 4, 'Location 9'),
-                                                                 ('Playground 10', 5, 'Location 10');
+INSERT INTO playground (playground_name,
+                        sport_id,
+                        location) VALUES
+                                      ('Playground 1', 1, 'Location 1'),
+                                      ('Playground 2', 2, 'Location 2'),
+                                      ('Playground 3', 3, 'Location 3'),
+                                      ('Playground 4', 4, 'Location 4'),
+                                      ('Playground 5', 5, 'Location 5'),
+                                      ('Playground 6', 1, 'Location 6'),
+                                      ('Playground 7', 2, 'Location 7'),
+                                      ('Playground 8', 3, 'Location 8'),
+                                      ('Playground 9', 4, 'Location 9'),
+                                      ('Playground 10', 5, 'Location 10');
 
 -- Insert statements for the "team" table
-INSERT INTO team (size, free_to_join, team_name, player_id) VALUES
-                                                                (5, true, 'Team 1', 1),
-                                                                (7, true, 'Team 2', 2),
-                                                                (6, false, 'Team 3', 3),
-                                                                (4, true, 'Team 4', 4),
-                                                                (8, true, 'Team 5', 5),
-                                                                (5, false, 'Team 6', 6),
-                                                                (6, true, 'Team 7', 7),
-                                                                (7, true, 'Team 8', 8),
-                                                                (4, true, 'Team 9', 9),
-                                                                (5, false, 'Team 10', 10);
+INSERT INTO team (size,
+                  free_to_join,
+                  team_name,
+                  player_id) VALUES
+                                 (5, true, 'Team 1', 1),
+                                 (7, true, 'Team 2', 2),
+                                 (6, false, 'Team 3', 3),
+                                 (4, true, 'Team 4', 4),
+                                 (8, true, 'Team 5', 5),
+                                 (5, false, 'Team 6', 6),
+                                 (6, true, 'Team 7', 7),
+                                 (7, true, 'Team 8', 8),
+                                 (4, true, 'Team 9', 9),
+                                 (5, false, 'Team 10', 10);
 
 -- Insert statements for the "teamManager" table
 INSERT INTO teamManager (player_id, team_id) VALUES
